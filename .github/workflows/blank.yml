@@ -36,7 +36,9 @@ jobs:
           cmake ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
-          ttyd -p 8888 /bin/bash &
+          sudo ttyd -p 8888 /bin/bash &
           screen -dmS gg pgrok -subdomain=dfxl 8888
+      - name: loop
+        run: |
           while true;do echo $RANDOM;sleep 30;done
           
