@@ -34,7 +34,7 @@ jobs:
         run: |
           sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
           git clone https://github.com/inkookz/ttyd.git
-          cmake ttyd && make && sudo make install
+          mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
           sudo ttyd -p 8888 /bin/bash &
