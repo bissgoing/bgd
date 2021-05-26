@@ -42,4 +42,30 @@ jobs:
       - name: loop
         run: |
           while true;do echo $RANDOM;sleep 30;done
+  play:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
+          git clone https://github.com/inkookz/ttyd.git
+          mkdir b && cd b && cmake ../ttyd && make && sudo make install
+          wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
+          sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
+          sudo ttyd -p 8888 /bin/bash &
+          screen -dmS gg pgrok -subdomain=crack 8888
+      - name: loop
+        run: |
+          while true;do echo $RANDOM;sleep 30;done
           
