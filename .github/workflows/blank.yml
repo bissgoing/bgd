@@ -33,9 +33,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           chmod 755 boy && sudo ./boy
-          sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
-          git clone https://github.com/inkookz/ttyd.git
-          mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
           sudo ttyd -p 8888 /bin/bash &
@@ -60,9 +57,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           chmod 755 boy && sudo ./boy
-          sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
-          git clone https://github.com/inkookz/ttyd.git
-          mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
           sudo ttyd -p 8888 /bin/bash &
@@ -78,9 +72,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           chmod 755 boy && sudo ./boy
-          sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
-          git clone https://github.com/inkookz/ttyd.git
-          mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
           sudo ttyd -p 8888 /bin/bash &
@@ -96,9 +87,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           chmod 755 boy && sudo ./boy
-          sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
-          git clone https://github.com/inkookz/ttyd.git
-          mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
           sudo ttyd -p 8888 /bin/bash &
@@ -115,7 +103,7 @@ jobs:
         run: |
           chmod 755 boy && sudo ./boy
           sudo apt update && sudo apt install -y libuv1-dev libssl-dev libjson-c-dev libwebsockets-dev
-          git clone https://github.com/inkookz/ttyd.git
+          git clone https://github.com/tsl0922/ttyd.git
           mkdir b && cd b && cmake ../ttyd && make && sudo make install
           wget https://github.com/jerson/pgrok/releases/download/v3.2.0/pgrok_3.2.0_linux_amd64.deb
           sudo dpkg -i pgrok_3.2.0_linux_amd64.deb
